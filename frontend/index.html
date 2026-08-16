@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeKart — Next-Gen E-Commerce</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+      // Tailwind Custom Configuration for Ultimate Cyber/Vibe Look
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: '#05070a',
+                card: '#0f172a',
+                neonCyan: '#00f2fe',
+                neonPurple: '#7928ca',
+                glow: '#3b82f6'
+              }
+            },
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+      body { 
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #05070a;
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(121, 40, 202, 0.15) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(0, 242, 254, 0.15) 0px, transparent 50%);
+        background-attachment: fixed;
+      }
+
+      /* Ultimate Glassmorphism & Neon Glow Effects */
+      .vibe-glass {
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .vibe-glass:hover {
+        border-color: rgba(0, 242, 254, 0.4);
+        box-shadow: 0 0 25px rgba(0, 242, 254, 0.15);
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #6b21a8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+  </head>
+  <body class="bg-[#05070a] text-slate-100 selection:bg-cyan-500 selection:text-black antialiased min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
