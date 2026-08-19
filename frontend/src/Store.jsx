@@ -26,13 +26,15 @@ export function StoreProvider({ children }) {
   });
   const [paymentMethod, setPaymentMethod] = useState('upi');
 
-  // Fetch Products from MongoDB / Backend API
+  // Fetch Products from Backend API
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        // Apna Backend API URL yahan daal dena (e.g. http://localhost:5000/api/products)
-        const response = await fetch('http://localhost:5000/api/products');
+        // Vercel environment variable ya fallback local URL
+        const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+        const response = await fetch(`${backendUrl}/api/products`);
+        
         if (!response.ok) throw new Error('Failed to fetch products from database');
         const data = await response.json();
         setProducts(data);
